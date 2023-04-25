@@ -9,7 +9,7 @@ someinternalhost_IP = 10.128.0.29
 Команда для подключения с локальной машины к витруальной машине someinternalhost, через виртуальную машину bastion:
 
 ```
-ssh -o ProxyCommand="ssh -W %h:%p vvakhitov@158.160.40.222" vvakhitov@10.128.0.29
+ssh -o ProxyCommand="ssh -W %h:%p bastion" someinternalhost
 ```
 Дополнительное задание:
 
