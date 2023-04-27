@@ -1,16 +1,11 @@
 #!/bin/bash
-
-# Go to home directory
+#enter in home directory
 cd /home/yc-user
-
-# Install git
-sudo apt install git
-
-# Clone app repository
+#clone repository app from git
 git clone -b monolith https://github.com/express42/reddit.git
-
-# Install app
+#enter in folder and install app
 cd reddit && bundle install
-
-# Run app
+#run app
 puma -d
+#check app and listen port
+ps aux | grep puma
