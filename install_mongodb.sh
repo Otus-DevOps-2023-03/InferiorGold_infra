@@ -6,7 +6,7 @@ wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add 
 apt update  && apt upgrade -y
 #apt --fix-broken install
 #apt update
-apt install mongodb mongodb-org -y
+apt install mongodb-org -y
 apt update
 #Start mongodb
 systemctl enable mongodb.service
