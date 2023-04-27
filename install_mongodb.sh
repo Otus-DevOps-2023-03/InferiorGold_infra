@@ -4,7 +4,7 @@ echo "deb https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" 
 wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
 sudo apt-get update  && sudo apt-get upgrade -y
 sudo apt --fix-broken install
-apt-get install -y mongodb-org
+apt-get install -y mongodb
 apt-get update
 #Start mongodb
 systemctl enable mongod
