@@ -79,7 +79,7 @@ yc compute instance create \
 
 ```
 scp install_ruby.sh yc-user@158.160.53.217:/home/yc-user/install_ruby.sh
-scp install_mongodb.sh yc-user@158.160.53.217:/home/yc-user/install_mongo.sh
+scp install_mongodb.sh yc-user@158.160.53.217:/home/yc-user/install_mongodb.sh
 scp deploy.sh yc-user@158.160.53.217:/home/yc-user/deploy.sh
 ```
 

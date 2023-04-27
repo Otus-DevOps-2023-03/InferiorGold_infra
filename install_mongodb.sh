@@ -6,6 +6,6 @@ sudo apt update && sudo apt upgrade -y
 sudo apt-get update  && sudo apt-get upgrade -y
 sudo apt-get install -y mongodb-org
 #Start mongodb
-sudo systemctl start mongod
-sudo systemctl enable mongod
-sudo systemctl status mongod
+sudo systemctl start mongodb
+sudo systemctl enable mongodb
+sudo systemctl status mongodb
