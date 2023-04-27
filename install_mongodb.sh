@@ -6,11 +6,9 @@ apt update  && apt upgrade -y
 apt install mongodb -y
 apt update
 #Start mongodb
-systemctl enable mongodb.service
-systemctl enable mongod
-systemctl start mongodb.service
-systemctl status mongodb.service
-
+systemctl enable mongod.service
+systemctl start mongod.service
+sudo systemctl status mongod.service
 nc -zvv localhost 27017
 mongo --version
 mongod --version
