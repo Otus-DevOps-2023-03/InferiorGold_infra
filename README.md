@@ -62,6 +62,7 @@ https://goteleport.com/blog/ssh-proxyjump-ssh-proxycommand/
 Создаем виртуальную машину через yc CLI:
 
 ```
+
 yc compute instance create \
   --name reddit-app \
   --hostname reddit-app \
@@ -70,15 +71,16 @@ yc compute instance create \
   --network-interface subnet-name=infra,nat-ip-version=ipv4 \
   --metadata serial-port-enable=1 \
   --ssh-key ~/.ssh/appuser.pub
+
 ```
 
 Запускайте скрипты вручную или из файлов, чтобы установить зависимости и запустить приложение Reddit: install_ruby.sh, install_mongodb.sh, deploy.sh
 Чтобы скопировать файлы скриптов на сервер, выполните следующие команды:
 
 ```
-scp install_ruby.sh yc-user@158.160.59.151:/home/yc-user/install_ruby.sh
-scp install_mongodb.sh yc-user@158.160.59.151:/home/yc-user/install_mongo.sh
-scp install_deploy.sh yc-user@158.160.59.151:/home/yc-user/deploy.sh
+scp install_ruby.sh yc-user@158.160.53.217:/home/yc-user/install_ruby.sh
+scp install_mongodb.sh yc-user@158.160.53.217:/home/yc-user/install_mongo.sh
+scp deploy.sh yc-user@158.160.53.217:/home/yc-user/deploy.sh
 ```
 
 ## Создайте и настройте сервер автоматически с помощью сценария конфигурации cloud-init.
@@ -95,6 +97,6 @@ yc compute instance create \
 ```
 
 ```
-testapp_IP = 158.160.59.151
+testapp_IP = 158.160.53.217
 testapp_port = 9292
 ```

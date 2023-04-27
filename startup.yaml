@@ -10,8 +10,8 @@ users:
 runcmd:
   - 'apt-get update'
   - 'apt-get install -y ruby-full ruby-bundler build-essential git mongodb'
-  - 'systemctl start mongod'
-  - 'systemctl enable mongod'
+  - 'systemctl start mongodb'
+  - 'systemctl enable mongodb'
   - 'cd /home/yc-user'
   - 'git clone -b monolith https://github.com/express42/reddit.git'
   - 'cd reddit && bundle install'
