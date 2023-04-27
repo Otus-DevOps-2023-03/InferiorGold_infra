@@ -1,13 +1,13 @@
 #!/bin/bash
-apt install apt-transport-https ca-certificates
-apt update  && apt upgrade -y
+sudo apt install apt-transport-https ca-certificates
+sudo apt update  && sudo  apt upgrade -y
 #apt --fix-broken install
 #apt update
-apt install mongodb -y
-apt update
+sudo apt install mongodb -y
+sudo apt update
 #Start mongodb
-systemctl enable mongod.service
-systemctl start mongod.service
+sudo systemctl enable mongod.service
+sudo systemctl start mongod.service
 sudo systemctl status mongod.service
 nc -zvv localhost 27017
 mongo --version
