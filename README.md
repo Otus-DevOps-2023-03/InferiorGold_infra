@@ -64,39 +64,44 @@ https://goteleport.com/blog/ssh-proxyjump-ssh-proxycommand/
 ```
 
 yc compute instance create \
-  --name reddit-app \
-  --hostname reddit-app \
-  --core-fraction=5 --memory=4 \ 
-  --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
-  --network-interface subnet-name=infra,nat-ip-version=ipv4 \
-  --metadata serial-port-enable=1 \
-  --ssh-key ~/.ssh/appuser.pub
+--name reddit-app \
+--hostname reddit-app \
+--core-fraction=5 --memory=4 \
+--create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
+--network-interface subnet-name=infra,nat-ip-version=ipv4 \
+--metadata serial-port-enable=1 \
+--ssh-key ~/.ssh/appuser.pub
 
+```
+
+Проверяем подключение
+```
+ssh yc-user@158.160.33.140
 ```
 
 Запускайте скрипты вручную или из файлов, чтобы установить зависимости и запустить приложение Reddit: install_ruby.sh, install_mongodb.sh, deploy.sh
 Чтобы скопировать файлы скриптов на сервер, выполните следующие команды:
 
 ```
-scp install_ruby.sh yc-user@158.160.53.217:/home/yc-user/install_ruby.sh
-scp install_mongodb.sh yc-user@158.160.53.217:/home/yc-user/install_mongodb.sh
-scp deploy.sh yc-user@158.160.53.217:/home/yc-user/deploy.sh
+scp install_ruby.sh yc-user@158.160.33.140:/home/yc-user/install_ruby.sh
+scp install_mongodb.sh yc-user@158.160.33.140:/home/yc-user/install_mongodb.sh
+scp deploy.sh yc-user@158.160.33.140:/home/yc-user/deploy.sh
 ```
 
 ## Создайте и настройте сервер автоматически с помощью сценария конфигурации cloud-init.
 Создайте сервер с помощью скрипта конфигурации запуска:
 ```
 yc compute instance create \
-  --name reddit-app \
-  --hostname reddit-app \
-  --core-fraction=5 --memory=4 \
-  --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
-  --network-interface subnet-name=infra,nat-ip-version=ipv4 \
-  --metadata serial-port-enable=1 \
-  --metadata-from-file user-data=startup.yaml
+--name reddit-app \
+--hostname reddit-app \
+--core-fraction=5 --memory=4 \
+--create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
+--network-interface subnet-name=infra,nat-ip-version=ipv4 \
+--metadata serial-port-enable=1 \
+--metadata-from-file user-data=startup.yaml
 ```
 
 ```
-testapp_IP = 158.160.53.217
+testapp_IP = 158.160.33.140
 testapp_port = 9292
 ```
