@@ -1,0 +1,18 @@
+#cloud-config
+users:
+  - name: yc-user
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9xzE8CMvNzti5az3CbAmfvGvJMHdyr3MvROTv49dSj2nUI9+iw3hvdW0tZPz009IwOfOrgKJ/+NZXAv9rNw5vPiIqEVDEJUqflKSQ19Wg92m/ghf1vsHhtkTDT9lHm7IAwEwg5tXJ+MJ0D18tQo5MQp6IseK6HATPHer6CTbWNfYaYafdNRSmHEkryE/+xVX1B3kFsb+bj2/wPUfVoe/A3UF/6I2iqP0bFra/TVhH85jcStjDS2QCUgw6QJ1zlopyqvzqOUqY+2UAd21Qed1glaGroWeN9P2T4UMaw1HSkk1+P/Ix3R0ByCvCovQhX32xYmXoIIr5pIilqNVVlfxgofPYhyT32Kw7InnpNn4KevY0G189bAzHF/WBUhVoukZ6sBJ8Kv50DT6EtTU2+AVHk/WeH/Sja/rGkOTnzUN8UZWDXqvWq/aC5KgX5ZubtJ1uB8v8Z/AbqtuAykezE2sIHd6ywkN+nTepHPZvaZ4A0x5Yg9sBTu01xunUXGTsHKU= appuser
+
+runcmd:
+  - 'apt-get update'
+  - 'apt-get install -y ruby-full ruby-bundler build-essential git mongodb'
+  - 'systemctl start mongodb'
+  - 'systemctl enable mongodb'
+  - 'cd /home/yc-user'
+  - 'git clone -b monolith https://github.com/express42/reddit.git'
+  - 'cd reddit && bundle install'
+  - 'puma -d'
