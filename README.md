@@ -1,5 +1,6 @@
 # InferiorGold_infra
 
+
 ## Packer
 Создать ветку packer-base
 
