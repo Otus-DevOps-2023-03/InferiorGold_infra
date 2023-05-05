@@ -13,16 +13,16 @@ provider "yandex" {
   folder_id                = var.folder_id
   zone                     = var.zone
 }
-
 module "app" {
   source          = "../modules/app"
   public_key_path = var.public_key_path
   app_disk_image  = var.app_disk_image
   subnet_id       = var.subnet_id
   private_key_path = file(var.private_key_path)
+  db_ip           = module.db.external_ip_address_db
+  #prov            = var.prov
 
 }
-
 module "db" {
   source          = "../modules/db"
   public_key_path = var.public_key_path
@@ -30,7 +30,6 @@ module "db" {
   subnet_id       = var.subnet_id
   private_key_path = file(var.private_key_path)
 }
-
 
 # resource "yandex_compute_instance" "app" {
 #   count = var.count_app
