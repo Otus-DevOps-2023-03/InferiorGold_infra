@@ -5,3 +5,6 @@ variables.json
 *.tfstate.backup
 *.tfvars
 .terraform/
+key.json
+balancer_key.json
+
