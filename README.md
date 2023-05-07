@@ -1,11 +1,39 @@
 # InferiorGold_infra
 
-## Terraform 1
+# Terraform 2
+##Принципы организации инфраструктурного кода и работа над инфраструктурой в команде на примере Terraform
+
+Создал ветку terraform-2
+Выполнил сборку образов для разных VM с созданием шаблона db.json и app.json
+Сделал разбитие конфигурации по файлам согласно ТЗ.
+Разбил файлы на модули.
+Для использование модулей загружаем их из указанного источника (source) коммандой terraform get
+Создал директории stage и prod. Скопировал файлы в каждую из директорий.
+Проверил конфигурацию
+Выполнил самостоятельные задания со * и ** . Создал файл backend.tf в каждой из директории stage/prod. Выполнил команды terraform init / terraform apply и добавил необходимые provisioner модули для деплоя и работы приложения
+```
+terraform {
+backend "s3" {
+endpoint   = "storage.yandexcloud.net"
+bucket     = "backet-otus"
+region     = "ru-central1"
+key        = "terraform.tfstate"
+access_key = ""
+secret_key = ""
+
+skip_region_validation      = true
+skip_credentials_validation = true
+}
+}
+```
+
+
+# Terraform 1
 Установил Terraform
 Создал дирректорию
 Создал сервисный аккаунт
 Описал создание инстанса с помощью Terraform в main.tf
-# Самостоятельные задания
+## Самостоятельные задания
   ## 1. Определите input переменную для приватного ключа,использующегося в определении подключения для провижинеров (connection)
     Переменная была добавлена в terraform.tfvars и добавлено описание в variables.tf
  ## 2.Определите input переменную для задания зоны в ресурсе "yandex_compute_instance" "app". У нее должно быть значение по умолчанию 
@@ -21,7 +49,7 @@
 
 
 
-## Packer
+# Packer
 Создать ветку packer-base
 
 Перенести файлы предыдущего ДЗ в configscripts
