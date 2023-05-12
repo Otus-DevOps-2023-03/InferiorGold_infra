@@ -8,3 +8,5 @@ variables.json
 key.json
 balancer_key.json
 
+### Ansible ###
+*.retry
