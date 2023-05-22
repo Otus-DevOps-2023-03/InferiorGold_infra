@@ -72,4 +72,5 @@
   
   handlers:
     - name: reload puma
-      systemd: name=puma state=restarted     
+      systemd: name=puma state=restarted
+        
