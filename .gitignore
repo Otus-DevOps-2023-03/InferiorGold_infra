@@ -5,8 +5,10 @@ variables.json
 *.tfstate.backup
 *.tfvars
 .terraform/
-key.json
-balancer_key.json
-
+./packer/key.json
+./terraform/prod/balancer_key.json
+./terraform/prod/key.json
+./terraform/stage/balancer_key.json
+./terraform/stage/key.json
 ### Ansible ###
 *.retry
