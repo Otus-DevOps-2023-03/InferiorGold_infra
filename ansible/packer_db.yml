@@ -14,7 +14,7 @@
       filename: '/etc/apt/sources.list.d/mongodb-org-3.2.list'
       repo: deb [ arch=amd64,arm64 ] http://mirror.yandex.ru/mirrors/repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
       state: present
-      
+
   - name: Update and upgrade apt packages
     apt:
       update_cache: yes
@@ -30,3 +30,5 @@
     systemd:
       name: mongod
       enabled: yes
+
+      
