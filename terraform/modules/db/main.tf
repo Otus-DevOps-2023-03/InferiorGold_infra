@@ -1,11 +1,11 @@
-# terraform {
-#   required_providers {
-#     yandex = {
-#       source  = "yandex-cloud/yandex"
-#       version = "0.89.0"
-#     }
-#   }
-# }
+#terraform {
+#  required_providers {
+#    yandex = {
+#      source  = "yandex-cloud/yandex"
+#      version = "0.89.0"
+#    }
+#  }
+#}
 
 resource "yandex_compute_instance" "db" {
   name = "reddit-db"
@@ -46,7 +46,7 @@ resource "null_resource" "db" {
     agent       = false
     private_key = var.private_key_path
  }
-  provisioner "remote-exec" {
-    script = "${path.module}/files/deploy.sh"
-  }
+  # provisioner "remote-exec" {
+  #   script = "${path.module}/files/deploy.sh"
+  # }
 }
