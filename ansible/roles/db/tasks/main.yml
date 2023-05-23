@@ -6,3 +6,8 @@
         dest: /etc/mongod.conf
         mode: 0644
       notify: restart mongod
+      
+    - name: Show info about the env hosts
+      debug:
+        msg: "This host {{env}} einvironment!!!"
+  

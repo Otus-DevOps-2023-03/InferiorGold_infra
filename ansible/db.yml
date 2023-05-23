@@ -1,8 +1,0 @@
----
-- name: Configure database server
-  hosts: db
-  become: true
-  vars:
-    mongo_bind_ip: 0.0.0.0 # <-- Переменная задается в блоке vars
-  roles:
-    - db

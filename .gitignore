@@ -12,3 +12,5 @@ variables.json
 ./terraform/stage/key.json
 ### Ansible ###
 *.retry
+jdauphant.nginx
+vault.key
