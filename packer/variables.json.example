@@ -1,5 +1,5 @@
 {
-    "key": "key.json",
+    "key": "packer/key.json",
     "folder_id": "b1gt9r1",
     "image": "ubuntu-1604-lts",
     "disk_size": "10",
