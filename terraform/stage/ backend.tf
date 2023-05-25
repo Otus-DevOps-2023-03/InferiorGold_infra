@@ -4,8 +4,8 @@ terraform {
     bucket     = "backet-otus"
     region     = "ru-central1"
     key = "../terraform.tfstate"
-    access_key = "YCxU0U"
-    secret_key = "YCOHeuciw"
+    access_key = "YCAJU0U"
+    secret_key = "YCOHciw"
 
     skip_region_validation      = true
     skip_credentials_validation = true
