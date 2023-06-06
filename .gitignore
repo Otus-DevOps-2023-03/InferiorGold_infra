@@ -1,3 +1,4 @@
+.DS_Store
 ./packer/variables.json
 variables.json
 *.tfstate
@@ -14,3 +15,11 @@ variables.json
 *.retry
 jdauphant.nginx
 vault.key
+# Vagrant & molecule
+.vagrant/
+*.log
+*.pyc
+.molecule
+.cache
+.pytest_cache
+./ansible/venv/
